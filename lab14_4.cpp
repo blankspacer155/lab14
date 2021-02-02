@@ -4,8 +4,7 @@
 #include <vector>
 using namespace std;
 
-//void shuffle(int &,int &,int &,int &);
-void shuffle(int *,int *,int *,int *);
+void shuffle(int &,int &,int &,int &);
 
 int main(){
 	int a = 50, b = 100, c = 500, d = 1000;
@@ -13,14 +12,14 @@ int main(){
 	srand(time(0));	
 	
 	for(int i = 0;i < 10;i++){
-	   // shuffle(a,b,c,d);
-	   	  shuffle(&a,&b,&c,&d);
+	    shuffle(a,b,c,d);
+	   	 
 	    cout << a << " " << b << " " << c << " " << d << "\n";
 	}
 	
 	return 0;
 }
-/* 
+
 void shuffle(int &a,int &b,int &c,int &d)
 {
 	int *ans[]={&a,&b,&c,&d};
@@ -33,18 +32,5 @@ void shuffle(int &a,int &b,int &c,int &d)
 	*ans[i]=card[ind];
 	card[ind]=0;	
 }
-} */
+}
 
-void shuffle(int *a,int *b,int *c,int *d)
-{
-	int *ans[]={a,b,c,d};
-	int card[]={50,100,500,1000};
-	for (int i=0;i<4;i++){
-	int ind;
-	do{
-		ind=rand()%4;
-	}while(card[ind]==0);
-	*ans[i]=card[ind];
-	card[ind]=0;	
-}
-}
